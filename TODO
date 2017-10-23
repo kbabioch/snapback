@@ -1,0 +1,6 @@
+- DEBUG conditionally (debug flag in config?)
+
+- logging (to stdout?)
+
+- make aspects configurable (/conf/snapback), e.g. subvolumes, repo, etc.
+

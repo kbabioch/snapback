@@ -1,0 +1,7 @@
+[Unit]
+Description=snapback prune
+
+[Service]
+Type=oneshot
+ExecStart=/home/kbabioch/snapback/prune.sh
+

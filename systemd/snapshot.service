@@ -1,0 +1,7 @@
+[Unit]
+Description=snapback snapshot
+
+[Service]
+Type=oneshot
+ExecStart=/home/kbabioch/snapback/snapshot.sh
+

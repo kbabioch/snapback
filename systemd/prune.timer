@@ -1,0 +1,10 @@
+[Unit]
+Description=snapback prune
+
+[Timer]
+OnCalendar=hourly
+Persistent=true
+
+[Install]
+WantedBy=multi-user.target
+

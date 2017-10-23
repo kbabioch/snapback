@@ -1,0 +1,11 @@
+# Mountpoint of snapshots
+SNAPDIR="/.snapshots"
+
+# List of subvolumes to snapshot and backup
+SUBVOLS="/"
+
+# Keep last n snapshots available (for fast recovery, etc.)
+KEEP=24
+
+# TODO: PRUNE? 7d1w1m ...
+
