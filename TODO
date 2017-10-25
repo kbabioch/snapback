@@ -4,3 +4,7 @@
 
 - make aspects configurable (/conf/snapback), e.g. subvolumes, repo, etc.
 
+- Make use of shellcheck
+
+- Make use of shunit2
+

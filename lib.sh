@@ -53,7 +53,7 @@ get_flags_from_snapshot() {
 regex_flag() {
 
     # todo: warn if no flag given?
-    echo "^[a-zA-Z@/]+\.[0-9]+\..*$1$"
+    echo "^[a-zA-Z@/]+\.[0-9]{8}T[0-9]{6}[+\-][0-9]{4}\..*${1}"
 
 }
 

@@ -1,7 +1,7 @@
 #! /bin/bash
 
 set -e
-set -x
+#set -x
 
 . ./conf/snapback
 . ./lib.sh
@@ -26,10 +26,9 @@ create_snapshot() {
 
     fi
 
-    mkdir -p $(dirname "$SNAPDIR/$subvol")
+    mkdir -p "$(dirname "$SNAPDIR/$subvol")"
 
-    btrfs subvolume snapshot -r "$1" "$SNAPDIR/$subvol.$(date "+%Y%m%d%H%M%S")"
-    # create toupload file?
+    btrfs subvolume snapshot -r "$1" "$SNAPDIR/$subvol.$(date "+%Y%m%dT%H%M%S%z")" > /dev/null
 
 }
 
