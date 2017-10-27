@@ -19,22 +19,22 @@ ifneq ($(strip $(DESTDIR)),)
 	mkdir -p $(DESTDIR)
 endif
 
-	mkdir -p $(DESTDIR)/lib/snapback
 	mkdir -p $(DESTDIR)/etc/conf.d
-	mkdir -p $(DESTDIR)/lib/systemd/system
+	mkdir -p $(DESTDIR)/usr/lib/snapback
+	mkdir -p $(DESTDIR)/usr/lib/systemd/system
 
 	install -Dm775 bin/snapback-snapshot $(DESTDIR)/usr/bin/snapback-snapshot
 	install -Dm775 bin/snapback-backup $(DESTDIR)/usr/bin/snapback-backup
 	install -Dm775 bin/snapback-prune $(DESTDIR)/usr/bin/snapback-prune
 
-	install -Dm644 lib/lib.sh $(DESTDIR)/lib/snapback/lib.sh
+	install -Dm644 lib/lib.sh $(DESTDIR)/usr/lib/snapback/lib.sh
 
-	install -Dm644 systemd/snapback-snapshot@.service $(DESTDIR)/lib/systemd/system/snapback-snapshot@.service
-	install -Dm644 systemd/snapback-snapshot@.timer $(DESTDIR)/lib/systemd/system/snapback-snapshot@.timer
-	install -Dm644 systemd/snapback-backup.service $(DESTDIR)/lib/systemd/system/snapback-backup.service
-	install -Dm644 systemd/snapback-backup.timer $(DESTDIR)/lib/systemd/system/snapback-backup.timer
-	install -Dm644 systemd/snapback-prune.service $(DESTDIR)/lib/systemd/system/snapback-prune.service
-	install -Dm644 systemd/snapback-prune.timer $(DESTDIR)/lib/systemd/system/snapback-prune.timer
+	install -Dm644 systemd/snapback-snapshot@.service $(DESTDIR)/usr/lib/systemd/system/snapback-snapshot@.service
+	install -Dm644 systemd/snapback-snapshot@.timer $(DESTDIR)/usr/lib/systemd/system/snapback-snapshot@.timer
+	install -Dm644 systemd/snapback-backup.service $(DESTDIR)/usr/lib/systemd/system/snapback-backup.service
+	install -Dm644 systemd/snapback-backup.timer $(DESTDIR)/usr/lib/systemd/system/snapback-backup.timer
+	install -Dm644 systemd/snapback-prune.service $(DESTDIR)/usr/lib/systemd/system/snapback-prune.service
+	install -Dm644 systemd/snapback-prune.timer $(DESTDIR)/usr/lib/systemd/system/snapback-prune.timer
 
 	install -Dm644 etc/snapback $(DESTDIR)/etc/conf.d/snapback
 
