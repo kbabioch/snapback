@@ -4,7 +4,7 @@ set -e
 #set -x
 
 # TODO don't hardcode
-. /etc/conf/snapback
+. /etc/conf.d/snapback
 . /lib/snapback/lib.sh
 
 #pre_prune() { }
