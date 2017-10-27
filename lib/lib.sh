@@ -57,3 +57,20 @@ regex_flag() {
 
 }
 
+readonly LOCKDIR="/run"
+readonly LOCKFD=200
+
+# $1: lockname
+# $2: fd (LOCKFD by default)
+lock() {
+
+    local progname=$1
+    local fd=${2:-$LOCKFD}
+    local lockfile=$LOCKDIR/$progname.lock
+
+    eval "exec $fd>$lockfile"
+
+    flock -n $fd && return 0 || return 1
+
+}
+

@@ -3,5 +3,5 @@ Description=snapback prune
 
 [Service]
 Type=simple
-ExecStart=/home/kbabioch/snapback/prune.sh
+ExecStart=/bin/snapback-prune
 

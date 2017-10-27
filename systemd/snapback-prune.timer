@@ -1,8 +1,8 @@
 [Unit]
-Description=snapback backup
+Description=snapback prune
 
 [Timer]
-OnCalendar=hourly
+OnCalendar=daily
 Persistent=true
 
 [Install]

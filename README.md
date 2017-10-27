@@ -19,7 +19,8 @@ laptop), etc. pp ...
 
 ## REQUIREMENTS
 
-- btrfs + borg
+- btrfs
+- borg
 
 ## LICENSE
 

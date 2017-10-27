@@ -3,5 +3,5 @@ Description=snapback backup
 
 [Service]
 Type=simple
-ExecStart=/home/kbabioch/snapback/backup.sh
+ExecStart=/bin/snapback-backup
 

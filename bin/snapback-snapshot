@@ -3,8 +3,9 @@
 set -e
 #set -x
 
-. ./conf/snapback
-. ./lib.sh
+# TODO don't hardcode
+. /etc/conf/snapback
+. /lib/snapback/lib.sh
 
 #pre_backup() { }
 #post_backup() { }
@@ -14,6 +15,7 @@ create_snapshot() {
 
     if ! is_subvol "$1"; then
 
+        echo "Invalid subvolume: $1"
         false
 
     fi
@@ -28,13 +30,18 @@ create_snapshot() {
 
     mkdir -p "$(dirname "$SNAPDIR/$subvol")"
 
-    btrfs subvolume snapshot -r "$1" "$SNAPDIR/$subvol.$(date "+%Y%m%dT%H%M%S%z")" > /dev/null
+    btrfs subvolume snapshot -r "$1" "$SNAPDIR/$subvol.$(date "+%Y%m%dT%H%M%S%z")"
 
 }
 
-for subvol in $SUBVOLS; do
+lock $(basename "$0")
 
-    create_snapshot "$subvol"
+if [[ -z "$1"  ]]; then
 
-done
+    echo "No path given"
+    exit 1
+
+fi
+
+create_snapshot "$1"
 
