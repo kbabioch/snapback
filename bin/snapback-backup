@@ -7,9 +7,6 @@ set -e
 . /etc/conf.d/snapback
 . /lib/snapback/lib.sh
 
-BORGREPO="borg@kvm1.babioch.de:antares"
-BORGARGS="-v --show-rc --stats --compression zlib,9"
-
 #pre_backup() { }
 #post_backup() { }
 
