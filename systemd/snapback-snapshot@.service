@@ -1,7 +1,0 @@
-[Unit]
-Description=snapback snapshot
-
-[Service]
-Type=simple
-ExecStart=/bin/snapback-snapshot %f
-

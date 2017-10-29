@@ -1,7 +1,0 @@
-[Unit]
-Description=snapback prune
-
-[Service]
-Type=simple
-ExecStart=/bin/snapback-prune
-

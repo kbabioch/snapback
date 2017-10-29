@@ -1,7 +1,0 @@
-[Unit]
-Description=snapback backup
-
-[Service]
-Type=simple
-ExecStart=/bin/snapback-backup
-
